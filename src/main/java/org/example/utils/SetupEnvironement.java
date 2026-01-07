@@ -19,10 +19,6 @@ public class SetupEnvironement {
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("credentials_enable_service", false);
         prefs.put("profile.password_manager_enabled", false);
-        options.setExperimentalOption("prefs", prefs);
-        Map<String, Object> prefs = new HashMap<>();
-        prefs.put("credentials_enable_service", false);
-        prefs.put("profile.password_manager_enabled", false);
         prefs.put("profile.password_protection_enabled", false); // penting untuk matikan alert breach
         options.setExperimentalOption("prefs", prefs);
         driver = new ChromeDriver(options);
