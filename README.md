@@ -1,6 +1,6 @@
 # 🎯 UI Automation Project
 
-Proyek ini berisi automation testing untuk aplikasi web menggunakan **Selenium WebDriver** dan **TestNG**.  
+Proyek ini berisi automation testing untuk aplikasi web menggunakan **Selenium WebDriver** **, cucumber** dan **TestNG**.  
 Semua test case dijalankan melalui class `TestRunner` sebagai entry point.
 
 ---
