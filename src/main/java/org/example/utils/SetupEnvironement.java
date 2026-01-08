@@ -2,7 +2,8 @@ package org.example.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,18 +11,17 @@ import java.util.Map;
 public class SetupEnvironement {
     public static WebDriver driver;
 
-    public static void setupEnvironment() {
-        System.setProperty("webdriver.chrome.driver", "driiver/chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-save-password-bubble");
-        options.addArguments("--disable-password-manager");
-        options.addArguments("profile-directory=Default");
-        Map<String, Object> prefs = new HashMap<>();
-        prefs.put("credentials_enable_service", false);
-        prefs.put("profile.password_manager_enabled", false);
-        prefs.put("profile.password_protection_enabled", false); // penting untuk matikan alert breach
-        options.setExperimentalOption("prefs", prefs);
-        driver = new ChromeDriver(options);
+    public static void setupEnvironment(String browser) {
+        if(browser.equalsIgnoreCase("edge")){
+            System.setProperty("webdriver.edge.driver", "driiver/msedgedriver.exe");
+            driver = new EdgeDriver();
+        }else{
+            System.setProperty("webdriver.chrome.driver", "driiver/chromedriver.exe");
+            driver = new ChromeDriver();
+        }
+
         driver.manage().window().maximize();
     }
+
+
 }

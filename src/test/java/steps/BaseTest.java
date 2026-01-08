@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 public class BaseTest {
     @Before
     public void setup() {
-        SetupEnvironement.setupEnvironment();
+        SetupEnvironement.setupEnvironment("edge");
     }
     @After
     public void teardown() {
